@@ -1,0 +1,29 @@
+# .gitignore
+
+# Output & logs
+output/
+*.log
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Editor-specific
+.vscode/
+.idea/
+.DS_Store
+
+# System
+Thumbs.db
+
+# Virtual env
+venv/
+.env
+
+# Backup files
+*.bak
+*.swp
+
+# Dependency logs or dump
+*.egg-info/
+dependency.log
