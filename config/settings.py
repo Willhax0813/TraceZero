@@ -16,7 +16,7 @@ TOOL_PATHS = {
     "amass": "/usr/bin/amass",
     "nmap": "/usr/bin/nmap",
     "whatweb": "/usr/bin/whatweb",
-    "dirsearch": "/opt/dirsearch/dirsearch.py"
+    "dirsearch": "/tools/dirsearch/dirsearch.py"
 }
 
 # API Keys (jika dibutuhkan oleh modul tertentu)
