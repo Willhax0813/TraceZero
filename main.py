@@ -1,4 +1,5 @@
-from banner import static_banner
+from banner import banner_tracezero_ascii
+from rich.console import Console
 from utils.dependency_check import check_and_install_dependencies
 from config.settings import SCAN_MODE
 from scanner import subdomain_enum, portscan, tech_detect, dir_enum
@@ -6,10 +7,12 @@ from report.logger import init_logger
 
 import sys
 
+console= Console()
+
 
 def main():
     # Tampilkan banner
-    print(static_banner)
+    banner_tracezero_ascii()
 
     # Inisialisasi logger
     logger = init_logger()
