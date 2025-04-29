@@ -1,4 +1,4 @@
-from banner import banner_tracezero_ascii
+from banner.banner import banner_tracezero_ascii
 from rich.console import Console
 from utils.dependency_check import check_and_install_dependencies
 from config.settings import SCAN_MODE
