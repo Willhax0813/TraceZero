@@ -1,29 +1,27 @@
-# .gitignore
+# === Python Cache ===
+__pycache__/
+*.py[cod]
+*.so
 
-# Output & logs
+# === Editor Files ===
+.vscode/
+.idea/
+*.swp
+
+# === System Files ===
+.DS_Store
+Thumbs.db
+
+# === Output and Reports ===
 output/
 *.log
 
-# Python cache
-__pycache__/
-*.pyc
+# === Local Overrides ===
+config/settings_local.py
 
-# Editor-specific
-.vscode/
-.idea/
-.DS_Store
+# === Tools (Auto-downloaded) ===
+tools/
 
-# System
-Thumbs.db
-
-# Virtual env
-venv/
-.env
-
-# Backup files
-*.bak
-*.swp
-
-# Dependency logs or dump
-*.egg-info/
-dependency.log
+# === Reports and Assets ===
+screenshots/
+*.pdf
