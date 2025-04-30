@@ -1,40 +1,16 @@
 # config/settings.py
 
-# Mode scanning yang tersedia: light, deep, stealth
-SCAN_MODE = "light"  # bisa diganti menjadi "deep" atau "stealth"
+import os
+import platform
+import shutil  # penting! untuk TOOL_PATHS yang pakai shutil.which()
 
-# Gunakan proxy untuk mode stealth
-USE_PROXY = True
-
-# Default wordlist path (bisa diganti sesuai kebutuhan)
-WORDLIST_PATH = "wordlists/common.txt"
-
-# Path tools eksternal jika tidak ada di PATH environment
+# Default (fallback) paths
 TOOL_PATHS = {
-    "assetfinder": "/usr/bin/assetfinder",
-    "subfinder": "/usr/bin/subfinder",
-    "amass": "/usr/bin/amass",
-    "nmap": "/usr/bin/nmap",
-    "whatweb": "/usr/bin/whatweb",
-    "dirsearch": "/tools/dirsearch/dirsearch.py",
-    "rustscan" : "/usr/.cargo/bin/rustscan"
+    "assetfinder": shutil.which("assetfinder") or "/usr/bin/assetfinder",
+    "subfinder": shutil.which("subfinder") or "/usr/bin/subfinder",
+    "amass": shutil.which("amass") or "/usr/bin/amass",
+    "nmap": shutil.which("nmap") or "/usr/bin/nmap",
+    "whatweb": shutil.which("whatweb") or "/usr/bin/whatweb",
+    "rustscan": shutil.which("rustscan") or f"{os.path.expanduser('~')}/.cargo/bin/rustscan",
+    "dirsearch": shutil.which("dirsearch") or "/opt/dirsearch/dirsearch.py",
 }
-
-# API Keys (jika dibutuhkan oleh modul tertentu)
-API_KEYS = {
-    "intelx": "YOUR_INTELX_KEY",
-    "shodan": "YOUR_SHODAN_KEY",
-    "wappalyzer": "YOUR_WAPPALYZER_KEY"
-}
-
-# Rate limit global (untuk future proxy rotator / stealth mode)
-RATE_LIMIT = 2  # request per detik
-
-# Logging level: DEBUG, INFO, WARNING, ERROR
-LOG_LEVEL = "INFO"
-
-# Output directory
-OUTPUT_DIR = "output/"
-
-# Save format
-EXPORT_FORMAT = ["html", "json"]
