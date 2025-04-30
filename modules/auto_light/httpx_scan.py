@@ -11,7 +11,7 @@ def run(subdomains_file, output_dir):
             subprocess.run([
                 "httpx", "-silent", "-threads", "50", "-status-code", "-title", "-tech-detect", 
                 "-no-color", "-timeout", "5", "-ip", "-follow-redirects", "-retries", "1",
-                "-rate-limit", "100", "-input", subdomains_file
+                "-rate-limit", "100", "-l", subdomains_file
             ], stdout=f, stderr=subprocess.DEVNULL)
 
         with open(live_out, "r") as check:

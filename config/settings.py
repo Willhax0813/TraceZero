@@ -14,3 +14,6 @@ TOOL_PATHS = {
     "rustscan": shutil.which("rustscan") or f"{os.path.expanduser('~')}/.cargo/bin/rustscan",
     "dirsearch": shutil.which("dirsearch") or "/opt/dirsearch/dirsearch.py",
 }
+
+LOG_LEVEL = "INFO"
+OUTPUT_DIR = "output/"
